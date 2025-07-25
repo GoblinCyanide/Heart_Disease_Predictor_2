@@ -48,11 +48,12 @@ glucose = col3.number_input("Enter your glucose level (mg/dL)", min_value = 0, m
 
 # Tranforming the user input data
 
-df_pred = pd.DataFrame([[gender,age,education,isSmoker,yearsSmoking,BPMeds,stroke,hyp,diabetes,chol,sys_bp,dia_bp,bmi,heart_rate,glucose]],
+df_pred = pd.DataFrame([[gender, age, education, isSmoker, yearsSmoking, BPMeds, stroke, hyp, diabetes, chol, sys_bp, dia_bp, bmi, heart_rate, glucose]],
+                       columns=['male', 'age', 'education', 'currentSmoker', 'cigsPerDay', 'BPMeds', 'prevalentStroke', 'prevalentHyp', 'diabetes', 'totChol', 'sysBP', 'diaBP', 'BMI', 'heartRate', 'glucose'])
 
-columns= ['gender','age','education','currentSmoker','cigsPerDay','BPMeds','prevalentStroke','prevalentHyp','diabetes','totChol','sysBP','diaBP','BMI','heartRate','glucose'])
 
-df_pred['gender'] = df_pred['gender'].apply(lambda x: 1 if x == 'Male' else 0)
+# This line now correctly modifies the 'male' column
+df_pred['male'] = df_pred['male'].apply(lambda x: 1 if x == 'Male' else 0)
 
 df_pred['prevalentHyp'] = df_pred['prevalentHyp'].apply(lambda x: 1 if x == 'Yes' else 0)
 
