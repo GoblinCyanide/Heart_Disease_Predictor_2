@@ -78,7 +78,7 @@ df_pred['education'] = df_pred['education'].apply(transform)
 # Loading the ML model and predicting using it
 
 
-model = joblib.load('fhs_rf_model.pkl')
+model = joblib.load('fhs_rf_model2.pkl')
 prediction = model.predict(df_pred)
 
 # Displaying the prediction on button click
