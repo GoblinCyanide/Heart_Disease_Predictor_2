@@ -5,6 +5,5 @@ flask
 flask_restful
 scipy
 sqlalchemy
-sklearn
 streamlit
 joblib
